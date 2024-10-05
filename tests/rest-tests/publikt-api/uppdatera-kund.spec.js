@@ -35,6 +35,22 @@ test('Samtliga attribut ska gå att uppdatera (ej id)', async ({ request }) => {
   }
 });
 
+test('Ska ge ett felsvar om id i body används OCH detta ej överensstämmer med id i pathen', async ({ request }) => {
+  const pathID = 12
+  // patch rest call
+  const resp = await request.patch('/digg/users/' + pathID, {
+    data: {
+      id: pathID + 5,
+      name: 'uppdatera med id olik pathID7',
+      address: '85356 Sundsvall',
+      phone: '244-897-8765',
+      email: 'mail@mail.com'
+    }
+  });
+  expect(resp.status()).toBe(400);
+  expect(resp.statusText()).toBe('Bad Request');
+});
+
 function isJSON(p) {
   try {
     JSON.parse(p)
