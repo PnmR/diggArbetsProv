@@ -7,3 +7,11 @@ test('Ska returnera JSON med en lista på kunder', async ({ request }) => {
   expect(resp.length).toBeGreaterThan(1);
   expect(resp[0]).toHaveProperty('name');
 });
+
+test('Ska tillhandahålla paginering, dvs acceptera parametrarna page och size enligt /digg/users?page=0&size=10', async ({ request }) => {
+  const size = 7;
+  // get the json representation of the get rest call
+  const resp = await request.get('/digg/users?page=1&size=' + size).then(res => res.json());
+
+  expect(resp.length).toEqual(size);
+});
