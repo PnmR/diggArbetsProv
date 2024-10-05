@@ -22,3 +22,11 @@ test('Ska returnera en lista på max 10 kunder, om inte klienten anger size', as
 
   expect(resp.length).toEqual(10);
 });
+
+test('Ska returnera JSON med den kund vars id överensstämmer med id i path', async ({ request }) => {
+  const path = 123;
+  // get the json representation of the get rest call
+  const resp = await request.get('/digg/users/' + path).then(res => res.json());
+
+  expect(resp.id).toEqual(path);
+});
