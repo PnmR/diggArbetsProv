@@ -15,3 +15,10 @@ test('Ska tillhandahålla paginering, dvs acceptera parametrarna page och size e
 
   expect(resp.length).toEqual(size);
 });
+
+test('Ska returnera en lista på max 10 kunder, om inte klienten anger size', async ({ request }) => {
+  // get the json representation of the get rest call
+  const resp = await request.get('/digg/users').then(res => res.json());
+
+  expect(resp.length).toEqual(10);
+});
