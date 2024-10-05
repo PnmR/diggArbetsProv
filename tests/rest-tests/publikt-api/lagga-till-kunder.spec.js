@@ -37,7 +37,7 @@ test('Ska returnera JSON med den skapade kunden, inklusive ett id-attribut', asy
     phone: '244-897-8765',
     email: 'mail@mail.com'
   };
-  // post rest call
+  // get the json representation of the post rest call
   const resp = await request.post('/digg/users', {
     data: postData
   }).then(res => res.json());
