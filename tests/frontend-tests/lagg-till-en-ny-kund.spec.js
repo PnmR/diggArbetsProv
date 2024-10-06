@@ -1,5 +1,4 @@
 const { test, expect } = require('@playwright/test');
-const exp = require('constants');
 
 test('Obligatoriska fält ska vara markerade', async ({ page }) => {
     await page.goto('http://localhost:5173/');

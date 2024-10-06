@@ -1,5 +1,4 @@
 const { test, expect } = require('@playwright/test');
-const exp = require('constants');
 
 test('Alla fält ska rensas när man klickar på ‘update’', async ({ page }) => {
     await page.goto('http://localhost:5173/');
