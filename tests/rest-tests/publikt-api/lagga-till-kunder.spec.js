@@ -1,4 +1,5 @@
-const { test, expect } = require('@playwright/test');
+import { test } from '../../../fixtures';
+import { expect } from '@playwright/test';
 
 test('Ska ta emot JSON med följande attribut: name, address, phone, email', async ({ request }) => {
   // post rest call

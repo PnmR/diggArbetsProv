@@ -1,4 +1,5 @@
-const { test, expect } = require('@playwright/test');
+import { test } from '../../../fixtures';
+import { expect } from '@playwright/test';
 
 test('Ska returnera JSON med en lista på kunder', async ({ request }) => {
   // get the json representation of the get rest call

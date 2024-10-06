@@ -1,4 +1,5 @@
-const { test, expect } = require('@playwright/test');
+import { test } from '../../fixtures';
+import { expect } from '@playwright/test';
 
 test('Alla fält ska rensas när man klickar på delete', async ({ page }) => {
     await page.goto('http://localhost:5173/');

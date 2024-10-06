@@ -1,4 +1,5 @@
-const { test, expect } = require('@playwright/test');
+import { test } from '../../../fixtures';
+import { expect } from '@playwright/test';
 
 test('Ska returnera JSON med den kund vars id överensstämmer med id i path', async ({ request }) => {
   const path = 123;

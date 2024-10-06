@@ -1,4 +1,5 @@
-const { test, expect } = require('@playwright/test');
+import { test } from '../../fixtures';
+import { expect } from '@playwright/test';
 
 test('Det ska gå att bläddra fram och tillbaka i resultatet', async ({ page }) => {
     await page.goto('http://localhost:5173/');

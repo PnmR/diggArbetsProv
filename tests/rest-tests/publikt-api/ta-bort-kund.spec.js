@@ -1,4 +1,5 @@
-const { test, expect } = require('@playwright/test');
+import { test } from '../../../fixtures';
+import { expect } from '@playwright/test';
 
 test('Ska returnera 204 No Content', async ({ request }) => {
   // delete rest call
